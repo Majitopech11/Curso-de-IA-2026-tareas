@@ -1,0 +1,128 @@
+=== EJERCICIO 01 - BUSQUEDA NO INFORMADA - EVIDENCIAS ===
+Pareja elegida: Timisoara -> Bucharest
+Fecha: Sat Sep 12 12:04:37 CST 2026
+
+$ python3 01_romania_map.py
+Romania road map (AIMA Figure 3.2)
+Cities: 20   Roads: 23
+
+  Arad: Sibiu 140 km, Timisoara 118 km, Zerind 75 km
+  Bucharest: Fagaras 211 km, Giurgiu 90 km, Pitesti 101 km, Urziceni 85 km
+  Craiova: Drobeta 120 km, Pitesti 138 km, Rimnicu Vilcea 146 km
+  Drobeta: Craiova 120 km, Mehadia 75 km
+  Eforie: Hirsova 86 km
+  Fagaras: Bucharest 211 km, Sibiu 99 km
+  Giurgiu: Bucharest 90 km
+  Hirsova: Eforie 86 km, Urziceni 98 km
+  Iasi: Neamt 87 km, Vaslui 92 km
+  Lugoj: Mehadia 70 km, Timisoara 111 km
+  Mehadia: Drobeta 75 km, Lugoj 70 km
+  Neamt: Iasi 87 km
+  Oradea: Sibiu 151 km, Zerind 71 km
+  Pitesti: Bucharest 101 km, Craiova 138 km, Rimnicu Vilcea 97 km
+  Rimnicu Vilcea: Craiova 146 km, Pitesti 97 km, Sibiu 80 km
+  Sibiu: Arad 140 km, Fagaras 99 km, Oradea 151 km, Rimnicu Vilcea 80 km
+  Timisoara: Arad 118 km, Lugoj 111 km
+  Urziceni: Bucharest 85 km, Hirsova 98 km, Vaslui 142 km
+  Vaslui: Iasi 92 km, Urziceni 142 km
+  Zerind: Arad 75 km, Oradea 71 km
+
+------------------------------------------------------------
+
+$ python3 01_romania_map.py --from-city Timisoara
+Romania road map (AIMA Figure 3.2)
+Cities: 20   Roads: 23
+
+  Timisoara: Arad 118 km, Lugoj 111 km
+
+------------------------------------------------------------
+
+$ python3 02_breadth_first_search.py --from-city Timisoara --to Bucharest
+Algorithm: Breadth-first search
+Problem:   Timisoara → Bucharest
+Status:    success
+Path:      Timisoara → Arad → Sibiu → Fagaras → Bucharest
+Depth:     4 roads
+Cost:      568 km
+Expanded:  7 nodes
+Generated: 17 nodes
+Frontier:  max size 5
+
+------------------------------------------------------------
+
+$ python3 03_uniform_cost_search.py --from-city Timisoara --to Bucharest
+Algorithm: Uniform-cost search
+Problem:   Timisoara → Bucharest
+Status:    success
+Path:      Timisoara → Arad → Sibiu → Rimnicu Vilcea → Pitesti → Bucharest
+Depth:     5 roads
+Cost:      536 km
+Expanded:  12 nodes
+Generated: 31 nodes
+Frontier:  max size 4
+
+------------------------------------------------------------
+
+$ python3 04_depth_first_search.py --from-city Timisoara --to Bucharest
+Algorithm: Depth-first search
+Problem:   Timisoara → Bucharest
+Status:    success
+Path:      Timisoara → Arad → Sibiu → Fagaras → Bucharest
+Depth:     4 roads
+Cost:      568 km
+Expanded:  4 nodes
+Generated: 12 nodes
+Frontier:  max size 5
+
+------------------------------------------------------------
+
+$ python3 05_depth_limited_search.py --from-city Timisoara --to Bucharest --limit 2
+Algorithm: Depth-limited search
+Problem:   Timisoara → Bucharest
+Status:    cutoff
+Detail:    limit=2
+Expanded:  3 nodes
+Generated: 8 nodes
+Frontier:  max size 5
+
+------------------------------------------------------------
+
+$ python3 05_depth_limited_search.py --from-city Timisoara --to Bucharest --limit 3
+Algorithm: Depth-limited search
+Problem:   Timisoara → Bucharest
+Status:    cutoff
+Detail:    limit=3
+Expanded:  6 nodes
+Generated: 16 nodes
+Frontier:  max size 7
+
+------------------------------------------------------------
+
+$ python3 05_depth_limited_search.py --from-city Timisoara --to Bucharest --limit 4
+Algorithm: Depth-limited search
+Problem:   Timisoara → Bucharest
+Status:    success
+Detail:    limit=4
+Path:      Timisoara → Arad → Sibiu → Fagaras → Bucharest
+Depth:     4 roads
+Cost:      568 km
+Expanded:  4 nodes
+Generated: 6 nodes
+Frontier:  max size 7
+
+------------------------------------------------------------
+
+$ python3 06_iterative_deepening_search.py --from-city Timisoara --to Bucharest
+Algorithm: Iterative deepening search
+Problem:   Timisoara → Bucharest
+Status:    success
+Detail:    last_limit=4
+Path:      Timisoara → Arad → Sibiu → Fagaras → Bucharest
+Depth:     4 roads
+Cost:      568 km
+Expanded:  14 nodes
+Generated: 34 nodes
+Frontier:  max size 7
+
+------------------------------------------------------------
+
