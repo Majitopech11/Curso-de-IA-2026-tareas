@@ -1,0 +1,100 @@
+================================================================
+EVIDENCIA 1: 01_romania_map.py
+================================================================
+
+Romania road map (AIMA Figure 3.2)
+Cities: 20   Roads: 23
+
+  Arad: Sibiu 140 km, Timisoara 118 km, Zerind 75 km
+  Bucharest: Fagaras 211 km, Giurgiu 90 km, Pitesti 101 km, Urziceni 85 km
+  Craiova: Drobeta 120 km, Pitesti 138 km, Rimnicu Vilcea 146 km
+  Drobeta: Craiova 120 km, Mehadia 75 km
+  Eforie: Hirsova 86 km
+  Fagaras: Bucharest 211 km, Sibiu 99 km
+  Giurgiu: Bucharest 90 km
+  Hirsova: Eforie 86 km, Urziceni 98 km
+  Iasi: Neamt 87 km, Vaslui 92 km
+  Lugoj: Mehadia 70 km, Timisoara 111 km
+  Mehadia: Drobeta 75 km, Lugoj 70 km
+  Neamt: Iasi 87 km
+  Oradea: Sibiu 151 km, Zerind 71 km
+  Pitesti: Bucharest 101 km, Craiova 138 km, Rimnicu Vilcea 97 km
+  Rimnicu Vilcea: Craiova 146 km, Pitesti 97 km, Sibiu 80 km
+  Sibiu: Arad 140 km, Fagaras 99 km, Oradea 151 km, Rimnicu Vilcea 80 km
+  Timisoara: Arad 118 km, Lugoj 111 km
+  Urziceni: Bucharest 85 km, Hirsova 98 km, Vaslui 142 km
+  Vaslui: Iasi 92 km, Urziceni 142 km
+  Zerind: Arad 75 km, Oradea 71 km
+
+================================================================
+EVIDENCIA 2: 02_heuristics.py --from-city Oradea --to Bucharest
+================================================================
+
+Heuristic: straight-line distance to Bucharest (AIMA table)
+
+  h(n)  city
+      0  Bucharest  <- goal
+     77  Giurgiu
+     80  Urziceni
+    100  Pitesti
+    151  Hirsova
+    160  Craiova
+    161  Eforie
+    176  Fagaras
+    193  Rimnicu Vilcea
+    199  Vaslui
+    226  Iasi
+    234  Neamt
+    241  Mehadia
+    242  Drobeta
+    244  Lugoj
+    253  Sibiu
+    329  Timisoara
+    366  Arad
+    374  Zerind
+    380  Oradea  <- start
+
+================================================================
+EVIDENCIA 3: 03_greedy_best_first_search.py --from-city Oradea --to Bucharest
+================================================================
+
+Algorithm: Greedy best-first search
+Problem:   Oradea → Bucharest
+Heuristic: straight-line distance to Bucharest (AIMA table)
+Status:    success
+Path:      Oradea → Sibiu → Fagaras → Bucharest
+Depth:     3 roads
+Cost:      461 km
+
+  city                  g     h     f
+  Oradea                   0   380   380
+  Sibiu                  151   253   404
+  Fagaras                250   176   426
+  Bucharest              461     0   461
+
+Expanded:  3 nodes
+Generated: 9 nodes
+Frontier:  max size 4
+
+================================================================
+EVIDENCIA 4: 04_a_star_search.py --from-city Oradea --to Bucharest
+================================================================
+
+Algorithm: A* search
+Problem:   Oradea → Bucharest
+Heuristic: straight-line distance to Bucharest (AIMA table)
+Status:    success
+Path:      Oradea → Sibiu → Rimnicu Vilcea → Pitesti → Bucharest
+Depth:     4 roads
+Cost:      429 km
+
+  city                  g     h     f
+  Oradea                   0   380   380
+  Sibiu                  151   253   404
+  Rimnicu Vilcea         231   193   424
+  Pitesti                328   100   428
+  Bucharest              429     0   429
+
+Expanded:  5 nodes
+Generated: 15 nodes
+Frontier:  max size 5
