@@ -1,5 +1,6 @@
 # Curso de IA - Tareas
 **Alumna:** María José Pech May
+
 LIC
 
 Lista de ejercicios y prácticas del curso de Inteligencia Artificial.
