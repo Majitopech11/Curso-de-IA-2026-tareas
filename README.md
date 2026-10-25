@@ -14,3 +14,4 @@ Lista de ejercicios y prácticas del curso de Inteligencia Artificial.
 | **Ejercicio_5** | [Búsqueda informada, ejercicio 1](Ejercicio_5) |
 | **Ejercicio_6** | [Perceptrón multicapa, ejercicio 1](Ejercicio_6) |
 | **Ejercicio_7** | [Clustering con k-medias ejercicio 1](Ejercicio_7) |
+| **Ejercicio_8** | [Q-learning ejercicio 1](Ejercicio_8) |
